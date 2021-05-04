@@ -23,7 +23,14 @@ public class TransazioneController
 	@ResponseBody
 	ListaGenericaDto<Transazione> aggiungiTransazione(@RequestBody TransazioneDto dto)
 	{
-		System.out.println(dto);
 		return transazioneService.aggiungiTransazione(dto.getTransazione());
+	}
+	
+	
+	@RequestMapping("/delete")
+	@ResponseBody
+	void cancellaTransazione(@RequestBody TransazioneDto dto)
+	{
+		transazioneService.delete(dto.getTransazione());
 	}
 }

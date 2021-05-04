@@ -28,6 +28,12 @@ public class TransazioneServiceImpl implements TransazioneService
 		transazione.setValutaDollaro(transazione.getValuta()*1.21);
 		return transazione;
 	}
+
+	@Override
+	public void delete(Transazione transazione)
+	{
+		transazioni.remove(transazione);
+	}
 	
 	
 	

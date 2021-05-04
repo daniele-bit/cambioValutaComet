@@ -8,4 +8,5 @@ import it.sirfin.convertiConioComet.model.Transazione;
 public interface TransazioneService 
 {
 	ListaGenericaDto<Transazione> aggiungiTransazione(Transazione transazione);
+	void delete(Transazione transazione);
 }
