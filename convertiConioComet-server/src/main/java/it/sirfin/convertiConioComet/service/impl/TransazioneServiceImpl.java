@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import it.sirfin.convertiConioComet.dto.ListaGenericaDto;
 import it.sirfin.convertiConioComet.model.Transazione;
 import it.sirfin.convertiConioComet.service.TransazioneService;
 
@@ -14,11 +15,13 @@ public class TransazioneServiceImpl implements TransazioneService
 	List<Transazione> transazioni = new ArrayList();
 
 	@Override
-	public List<Transazione> aggiungiTransazione(Transazione transazione) 
+	public ListaGenericaDto<Transazione> aggiungiTransazione(Transazione transazione) 
 	{
 		transazione=cambioValuta(transazione);
 		this.transazioni.add(transazione);
-		return this.transazioni;
+		ListaGenericaDto<Transazione> listaGenerica = new ListaGenericaDto<>();
+		listaGenerica.setLista(transazioni);
+		return listaGenerica;
 	}
 
 	private Transazione cambioValuta(Transazione transazione) {
