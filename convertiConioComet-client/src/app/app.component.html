@@ -6,7 +6,7 @@
 <input type="number"  [(ngModel)]= "transazione.valuta" required>
 <button (click)="aggiungi()">Aggiungi</button>
 
-<table>
+<table *ngIf = "transazioni.length > 0  ">
  <thead>
    <tr>
      <th>Data</th>
