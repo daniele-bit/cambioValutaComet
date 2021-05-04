@@ -29,8 +29,9 @@ public class TransazioneController
 	
 	@RequestMapping("/delete")
 	@ResponseBody
-	void cancellaTransazione(@RequestBody TransazioneDto dto)
+	ListaGenericaDto<Transazione> cancellaTransazione(@RequestBody TransazioneDto dto)
 	{
-		transazioneService.delete(dto.getTransazione());
+		System.out.println(dto);
+		return transazioneService.delete(dto.getTransazione());
 	}
 }

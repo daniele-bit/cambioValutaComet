@@ -20,7 +20,16 @@ export class AppComponent {
     this._httpClient.post<ListaGenericaDto<Transazione>>("http://localhost:8080/transazione",dto)
     .subscribe(value=>{
       this.transazioni = value.lista;
-        
+
     });
+  }
+  cancella(t:Transazione)
+  {
+    let dto:TransazioneDto = new TransazioneDto();
+    dto.transazione = t;
+    this._httpClient.post<ListaGenericaDto<Transazione>>("http://localhost:8080/delete", dto)
+    .subscribe(value=>{
+      this.transazioni=value.lista;
+    })
   }
 }

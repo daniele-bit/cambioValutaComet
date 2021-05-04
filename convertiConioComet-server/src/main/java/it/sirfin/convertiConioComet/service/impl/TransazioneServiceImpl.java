@@ -15,26 +15,29 @@ public class TransazioneServiceImpl implements TransazioneService
 	List<Transazione> transazioni = new ArrayList();
 
 	@Override
-	public ListaGenericaDto<Transazione> aggiungiTransazione(Transazione transazione) 
+	public ListaGenericaDto<Transazione> aggiungiTransazione(Transazione transazione)
 	{
-		transazione=cambioValuta(transazione);
+		transazione = cambioValuta(transazione);
 		this.transazioni.add(transazione);
 		ListaGenericaDto<Transazione> listaGenerica = new ListaGenericaDto<>();
 		listaGenerica.setLista(transazioni);
 		return listaGenerica;
 	}
 
-	private Transazione cambioValuta(Transazione transazione) {
-		transazione.setValutaDollaro(transazione.getValuta()*1.21);
+	private Transazione cambioValuta(Transazione transazione)
+	{
+		transazione.setValutaDollaro(transazione.getValuta() * 1.21);
 		return transazione;
 	}
 
 	@Override
-	public void delete(Transazione transazione)
+	public ListaGenericaDto<Transazione> delete(Transazione transazione)
 	{
-		transazioni.remove(transazione);
+
+
+		ListaGenericaDto<Transazione> dtoRes = new ListaGenericaDto<>();
+		dtoRes.setLista(this.transazioni);
+		return dtoRes;
 	}
-	
-	
-	
+
 }
