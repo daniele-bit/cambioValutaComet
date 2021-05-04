@@ -3,10 +3,10 @@
 <p>Descrizione</p><br>
 <input type="text"  [(ngModel)]= "transazione.descrizione" required>
 <p>Valuta in euro</p><br>
-<input type="number"  [(ngModel)]= "transazione.valuta" required>
-<button (click)="aggiungi()">Aggiungi</button>
+<input type="number"  [(ngModel)]= "transazione.valuta" required ><br> <br>
+<button (click)="aggiungi()" class="btn btn-success">Aggiungi</button>
 
-<table *ngIf = "transazioni.length > 0  ">
+<table *ngIf = "transazioni.length > 0  " class="table">
  <thead>
    <tr>
      <th>Data</th>
@@ -21,7 +21,7 @@
      <td>{{t.descrizione}}</td>
      <td>{{t.valuta}}</td>
      <td>{{t.valutaDollaro}}</td>
-     <td><input type="button" value="Cancella" (click)="cancella(t)"></td>
+     <td><input type="button" value="Cancella" (click)="cancella(t)" class="btn btn-outline-danger btn-sm"></td>
    </tr>
  </tbody>
 </table>
