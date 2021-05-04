@@ -10,7 +10,7 @@ public class Movimento {
 	private double importoDollari;
 	
 	
-	
+	//Costruttore
 	public Movimento() {
 		super();
 		
