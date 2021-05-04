@@ -20,6 +20,7 @@ export class AppComponent {
     this._httpClient.post<ListaGenericaDto<Transazione>>("http://localhost:8080/transazione",dto)
     .subscribe(value=>{
       this.transazioni = value.lista;
+      this.transazione = new Transazione();
 
     });
   }
