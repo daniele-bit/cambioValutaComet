@@ -4,3 +4,5 @@ export class Transazione {
     valutaDollaro:number;
     data:Date;
 }
+
+//kbnbbrn
