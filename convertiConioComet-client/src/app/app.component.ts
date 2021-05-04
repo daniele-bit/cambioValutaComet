@@ -1,4 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { ListaGenericaDto } from './model/dto/ListaGenericaDto';
+import { TransazioneDto } from './model/dto/TransazioneDto';
+import { Transazione } from './model/Transazione';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'convertiConioComet-client';
+  transazione:Transazione = new Transazione;
+  transazioni:Transazione[]  = [];
+  constructor(private _httpClient:HttpClient){}
+  aggiungi(){
+    let dto:TransazioneDto = new TransazioneDto();
+    dto.transazione = this.transazione;
+    console.log(dto);
+    this._httpClient.post<ListaGenericaDto<Transazione>>("http://localhost:8080/transazione",dto)
+    .subscribe(value=>{
+      this.transazioni = value.lista;
+        
+    });
+  }
 }
