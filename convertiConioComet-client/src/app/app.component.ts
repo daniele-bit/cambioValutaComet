@@ -31,6 +31,7 @@ export class AppComponent {
     this._httpClient.post<ListaGenericaDto<Transazione>>("http://localhost:8080/delete", dto)
     .subscribe(value=>{
       this.transazioni=value.lista;
+      //merge
     })
   }
 
