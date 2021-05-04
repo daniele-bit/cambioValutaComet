@@ -33,4 +33,7 @@ export class AppComponent {
       this.transazioni=value.lista;
     })
   }
+
+
+  //COMMENTO PER MERGE
 }
