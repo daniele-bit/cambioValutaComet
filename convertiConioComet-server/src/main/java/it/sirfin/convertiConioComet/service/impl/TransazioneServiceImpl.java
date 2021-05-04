@@ -34,15 +34,11 @@ public class TransazioneServiceImpl implements TransazioneService
 	@Override
 	public ListaGenericaDto<Transazione> delete(Transazione transazione)
 	{
-//		for (Transazione t : transazioni) {
-//			if(transazione.equals(t)) {
-//				System.out.println("nella lista c'è un oggetto uguale");
-//			}
-//		}
 		this.transazioni.remove(transazione);
 		ListaGenericaDto<Transazione> dtoRes = new ListaGenericaDto<>();
 		dtoRes.setLista(this.transazioni);
 		return dtoRes;
 	}
 	//CONFLITTOOO
+
 }
