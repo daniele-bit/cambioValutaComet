@@ -44,5 +44,5 @@ public class TransazioneServiceImpl implements TransazioneService
 		dtoRes.setLista(this.transazioni);
 		return dtoRes;
 	}
-
+	//CONFLITTOOO
 }
