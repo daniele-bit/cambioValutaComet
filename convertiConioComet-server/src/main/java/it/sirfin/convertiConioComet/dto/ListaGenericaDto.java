@@ -9,7 +9,6 @@ public class ListaGenericaDto<T>
 	
 	public ListaGenericaDto() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public List<T> getLista() {
